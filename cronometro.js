@@ -1,7 +1,7 @@
 let segundos = 0;
 let intervalo = null;
 
-function mostrarCronometro() {
+const mostrarCronometro=()=> {
   const horas = Math.floor(segundos / 3600);
   const minutos = Math.floor((segundos % 3600) / 60);
   const seg = segundos % 60;
@@ -10,7 +10,7 @@ function mostrarCronometro() {
   pantalla.textContent = formato;
 }
 
-function manejarInicio() {
+const manejarInicio=()=> {
   if (intervalo === null) {
     intervalo = setInterval(() => {
       segundos++; //para que el reloj comience a correr
@@ -19,12 +19,12 @@ function manejarInicio() {
   }
 }
 
-function manejarPausa() {
+const manejarPausa=()=> {
   clearInterval(intervalo);
   intervalo = null; //para q el reloj deje de correr
 }
 
-function manejarReset() {
+const manejarReset=()=> {
   clearInterval(intervalo);
   intervalo = null;
   segundos = 0;
